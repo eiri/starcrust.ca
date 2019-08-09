@@ -1,6 +1,12 @@
-body, html {
-  font-family: 'Raleway', sans-serif;
+@import url('https://rsms.me/inter/inter.css');
+
+html, body {
+  font-family: 'Inter', sans-serif;
   height: 100%;
+}
+
+@supports (font-variation-settings: normal) {
+  html { font-family: 'Inter var', sans-serif; }
 }
 
 .parallax-top {
