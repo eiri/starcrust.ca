@@ -1,62 +1,99 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>StarCrust</title>
-    <link rel="shortcut icon" type="image/icon" href="favicon.ico"/>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cssgram/0.1.12/cssgram.min.css">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            fontFamily: {
-              'rock-salt': ['"Rock Salt"', 'cursive'],
-            },
-            colors: {
-              'start-paper': '#ede1c9',
-              'mid-paper': '#fef8e2',
-              'end-paper': '#f2ebde',
-            },
-            backgroundImage: {
-              'checkers': "linear-gradient(45deg, #ccc 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #ccc 75%), linear-gradient(45deg, transparent 75%, #ccc 75%), linear-gradient(45deg, #ccc 25%, #fff 25%);"
-            },
-            backgroundSize: {
-              'checkers': '32px 32px'
-            },
-            backgroundPosition: {
-              'checkers': '0 0, 0 0, -16px -16px, 16px 16px'
-            }
-          }
-        }
-      }
-    </script>
-  </head>
-  <body class="mx-auto">
-    <section class="w-full h-screen grid gap-4 grid-cols-1 lg:grid-cols-3">
-      <div class="flex justify-center items-start pt-4">
-        <figure class="p-5 pb-2 bg-gradient-to-t from-start-paper via-20% via-mid-paper end-60% to-end-paper shadow-lg -rotate-1">
-          <img class="gingham size-[315px] aspect-square bg-checkers" src="https://source.unsplash.com/collection/201310/320x320" loading="lazy" />
-          <figcaption class="font-rock-salt text-xl text-slate-700 tracking-widest text-center p-2">London. Gingham.</figcaption>
-        </figure>
-      </div>
-      <div class="flex justify-center items-center">
-        <figure class="p-5 pb-2 bg-gradient-to-t from-start-paper via-mid-paper via-10% to-end-paper to-80% shadow-lg rotate-2">
-          <img class="clarendon size-[315px] aspect-square bg-checkers" src="https://source.unsplash.com/collection/1993214/320x320" loading="lazy" />
-          <figcaption class="block font-rock-salt text-xl text-slate-700 tracking-widest text-center p-2">Tokyo. Clarendon.</figcaption>
-        </figure>
-      </div>
-      <div class="flex justify-center items-end pb-8">
-        <figure class="p-5 pb-2 bg-gradient-to-t from-start-paper from-20% via-mid-paper via-60% to-end-paper shadow-lg -rotate-1">
-          <img class="lofi size-[315px] aspect-square bg-checkers" src="https://source.unsplash.com/collection/784855/320x320" loading="lazy" />
-          <figcaption class="block font-rock-salt text-xl text-slate-700 tracking-widest text-center p-2">Urban. LoFi.</figcaption>
-        </figure>
-      </div>
-    </section>
-  </body>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>StarCrust</title>
+        <link rel="shortcut icon" type="image/icon" href="favicon.ico" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/cssgram/0.1.12/cssgram.min.css"
+        />
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        fontFamily: {
+                            "rock-salt": ['"Rock Salt"', "cursive"],
+                        },
+                        colors: {
+                            "start-paper": "#ede1c9",
+                            "mid-paper": "#fef8e2",
+                            "end-paper": "#f2ebde",
+                        },
+                        backgroundImage: {
+                            checkers:
+                                "linear-gradient(45deg, #ccc 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #ccc 75%), linear-gradient(45deg, transparent 75%, #ccc 75%), linear-gradient(45deg, #ccc 25%, #fff 25%);",
+                        },
+                        backgroundSize: {
+                            checkers: "32px 32px",
+                        },
+                        backgroundPosition: {
+                            checkers: "0 0, 0 0, -16px -16px, 16px 16px",
+                        },
+                    },
+                },
+            };
+        </script>
+    </head>
+    <body class="mx-auto">
+        <section class="w-full h-screen grid gap-4 grid-cols-1 lg:grid-cols-3">
+            <div class="flex justify-center items-start pt-4">
+                <figure
+                    class="p-5 pb-2 bg-gradient-to-t from-start-paper via-20% via-mid-paper end-60% to-end-paper shadow-lg -rotate-1"
+                >
+                    <img
+                        class="gingham size-[315px] aspect-square bg-checkers"
+                        src="paul-pastourmatzis-sKp82vtrxdI-unsplash.jpg"
+                        loading="lazy"
+                    />
+                    <figcaption
+                        class="font-rock-salt text-xl text-slate-700 tracking-widest text-center p-2"
+                    >
+                        London. Gingham.
+                    </figcaption>
+                </figure>
+            </div>
+            <div class="flex justify-center items-center">
+                <figure
+                    class="p-5 pb-2 bg-gradient-to-t from-start-paper via-mid-paper via-10% to-end-paper to-80% shadow-lg rotate-2"
+                >
+                    <img
+                        class="clarendon size-[315px] aspect-square bg-checkers"
+                        src="vista-wei-OiERUvVrioU-unsplash.jpg"
+                        loading="lazy"
+                    />
+                    <figcaption
+                        class="block font-rock-salt text-xl text-slate-700 tracking-widest text-center p-2"
+                    >
+                        Tokyo. Clarendon.
+                    </figcaption>
+                </figure>
+            </div>
+            <div class="flex justify-center items-end pb-8">
+                <figure
+                    class="p-5 pb-2 bg-gradient-to-t from-start-paper from-20% via-mid-paper via-60% to-end-paper shadow-lg -rotate-1"
+                >
+                    <img
+                        class="lofi size-[315px] aspect-square bg-checkers"
+                        src="matthew-henry-Ix1TiS-E17E-unsplash.jpg"
+                        loading="lazy"
+                    />
+                    <figcaption
+                        class="block font-rock-salt text-xl text-slate-700 tracking-widest text-center p-2"
+                    >
+                        Urban. LoFi.
+                    </figcaption>
+                </figure>
+            </div>
+        </section>
+    </body>
 </html>
