@@ -2,98 +2,301 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>StarCrust</title>
+        <meta
+            name="description"
+            content="StarCrust is taking shape. A new experience is coming soon."
+        />
+        <meta name="theme-color" content="#183c35" />
+        <title>StarCrust — Coming Soon</title>
         <link rel="shortcut icon" type="image/icon" href="favicon.ico" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
-            href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Croissant+One&display=swap"
             rel="stylesheet"
         />
-        <link
-            rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/cssgram/0.1.12/cssgram.min.css"
-        />
-        <script src="https://cdn.tailwindcss.com"></script>
-        <script>
-            tailwind.config = {
-                theme: {
-                    extend: {
-                        fontFamily: {
-                            "rock-salt": ['"Rock Salt"', "cursive"],
-                        },
-                        colors: {
-                            "start-paper": "#ede1c9",
-                            "mid-paper": "#fef8e2",
-                            "end-paper": "#f2ebde",
-                        },
-                        backgroundImage: {
-                            checkers:
-                                "linear-gradient(45deg, #ccc 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #ccc 75%), linear-gradient(45deg, transparent 75%, #ccc 75%), linear-gradient(45deg, #ccc 25%, #fff 25%);",
-                        },
-                        backgroundSize: {
-                            checkers: "32px 32px",
-                        },
-                        backgroundPosition: {
-                            checkers: "0 0, 0 0, -16px -16px, 16px 16px",
-                        },
-                    },
-                },
-            };
-        </script>
+        <style>
+            :root {
+                --ink: #173c35;
+                --ink-soft: #2d584e;
+                --cream: #f4ead1;
+                --paper: #fbf5e7;
+                --gold: #bd8535;
+                --rust: #aa4f35;
+            }
+
+            * {
+                box-sizing: border-box;
+            }
+
+            html,
+            body {
+                min-height: 100%;
+            }
+
+            body {
+                margin: 0;
+                color: var(--ink);
+                background:
+                    radial-gradient(circle at 50% 38%, #345d50 0, transparent 38%),
+                    repeating-linear-gradient(
+                        45deg,
+                        rgb(255 255 255 / 0.015) 0 2px,
+                        transparent 2px 7px
+                    ),
+                    #102f2b;
+                font-family: Georgia, "Times New Roman", serif;
+            }
+
+            .page {
+                position: relative;
+                display: grid;
+                place-items: center;
+                min-height: 100svh;
+                padding: clamp(1rem, 3vw, 2.5rem);
+                overflow: hidden;
+                isolation: isolate;
+            }
+
+            .page::before,
+            .page::after {
+                position: absolute;
+                z-index: -1;
+                width: min(28rem, 60vw);
+                aspect-ratio: 1;
+                border: 1px solid rgb(189 133 53 / 0.3);
+                border-radius: 50%;
+                content: "";
+            }
+
+            .page::before {
+                top: -19rem;
+                left: -10rem;
+                box-shadow: 0 0 0 18px rgb(189 133 53 / 0.06);
+            }
+
+            .page::after {
+                right: -12rem;
+                bottom: -20rem;
+                box-shadow: 0 0 0 18px rgb(189 133 53 / 0.06);
+            }
+
+            .card {
+                position: relative;
+                width: min(100%, 48rem);
+                min-height: min(49rem, calc(100svh - 3rem));
+                padding: clamp(1.25rem, 4vw, 3rem);
+                background:
+                    linear-gradient(rgb(251 245 231 / 0.92), rgb(244 234 209 / 0.98)),
+                    repeating-linear-gradient(
+                        90deg,
+                        transparent 0 4px,
+                        rgb(23 60 53 / 0.04) 4px 5px
+                    );
+                border: 1px solid var(--gold);
+                border-radius: 50% 50% 1.5rem 1.5rem / 12rem 12rem 1.5rem 1.5rem;
+                box-shadow:
+                    0 0 0 7px var(--ink),
+                    0 0 0 9px var(--gold),
+                    0 2rem 5rem rgb(0 0 0 / 0.35);
+            }
+
+            .card::before {
+                position: absolute;
+                inset: 0.8rem;
+                pointer-events: none;
+                border: 1px solid rgb(189 133 53 / 0.7);
+                border-radius: inherit;
+                content: "";
+            }
+
+            .content {
+                position: relative;
+                z-index: 1;
+                display: flex;
+                min-height: calc(min(49rem, 100svh - 3rem) - clamp(2.5rem, 8vw, 6rem));
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+            }
+
+            .eyebrow {
+                display: flex;
+                align-items: center;
+                gap: 0.75rem;
+                margin: 0 0 1rem;
+                color: var(--rust);
+                font-size: 0.7rem;
+                font-weight: 700;
+                letter-spacing: 0.3em;
+                text-transform: uppercase;
+            }
+
+            .eyebrow::before,
+            .eyebrow::after {
+                width: 2.5rem;
+                height: 1px;
+                background: var(--gold);
+                content: "";
+            }
+
+            .emblem {
+                width: clamp(7rem, 18vw, 9.5rem);
+                margin-bottom: 0.6rem;
+                color: var(--gold);
+                filter: drop-shadow(0 2px 0 rgb(255 255 255 / 0.6));
+            }
+
+            h1 {
+                margin: 0;
+                color: var(--ink);
+                font-family: "Croissant One", Georgia, serif;
+                font-size: clamp(3rem, 10vw, 6.4rem);
+                font-weight: 400;
+                letter-spacing: -0.06em;
+                line-height: 0.95;
+                text-shadow: 0.04em 0.04em 0 var(--gold);
+            }
+
+            .coming {
+                display: flex;
+                width: min(100%, 29rem);
+                align-items: center;
+                gap: 1rem;
+                margin: 1.6rem 0 1.4rem;
+                color: var(--rust);
+                font-family: "Croissant One", Georgia, serif;
+                font-size: clamp(0.95rem, 3vw, 1.25rem);
+                white-space: nowrap;
+            }
+
+            .coming::before,
+            .coming::after {
+                height: 1px;
+                flex: 1;
+                background: linear-gradient(90deg, transparent, var(--gold));
+                content: "";
+            }
+
+            .coming::after {
+                background: linear-gradient(90deg, var(--gold), transparent);
+            }
+
+            .message {
+                max-width: 31rem;
+                margin: 0;
+                color: var(--ink-soft);
+                font-size: clamp(1rem, 2.8vw, 1.2rem);
+                font-style: italic;
+                line-height: 1.7;
+            }
+
+            .flourish {
+                width: min(18rem, 70%);
+                margin-top: clamp(1.5rem, 4vw, 2.5rem);
+                color: var(--rust);
+            }
+
+            .corner {
+                position: absolute;
+                z-index: 2;
+                width: clamp(5rem, 15vw, 8rem);
+                color: var(--gold);
+                pointer-events: none;
+            }
+
+            .corner--left {
+                bottom: 1.05rem;
+                left: 1.05rem;
+            }
+
+            .corner--right {
+                right: 1.05rem;
+                bottom: 1.05rem;
+                transform: scaleX(-1);
+            }
+
+            @media (max-width: 36rem) {
+                .card {
+                    min-height: calc(100svh - 2rem);
+                    border-radius: 50% 50% 1rem 1rem / 7rem 7rem 1rem 1rem;
+                }
+
+                .content {
+                    min-height: calc(100svh - 4.5rem);
+                }
+
+                .eyebrow::before,
+                .eyebrow::after {
+                    width: 1.25rem;
+                }
+
+                .corner {
+                    opacity: 0.7;
+                }
+            }
+
+            @media (max-height: 42rem) and (orientation: landscape) {
+                .card {
+                    min-height: 34rem;
+                }
+
+                .content {
+                    min-height: 28rem;
+                }
+
+                .emblem {
+                    width: 6rem;
+                }
+            }
+        </style>
     </head>
-    <body class="mx-auto">
-        <section class="w-full h-screen grid gap-4 grid-cols-1 lg:grid-cols-3">
-            <div class="flex justify-center items-start pt-4">
-                <figure
-                    class="p-5 pb-2 bg-gradient-to-t from-start-paper via-20% via-mid-paper end-60% to-end-paper shadow-lg -rotate-1"
-                >
-                    <img
-                        class="gingham size-[315px] aspect-square bg-checkers"
-                        src="paul-pastourmatzis-sKp82vtrxdI-unsplash.jpg"
-                        loading="lazy"
-                    />
-                    <figcaption
-                        class="font-rock-salt text-xl text-slate-700 tracking-widest text-center p-2"
-                    >
-                        London. Gingham.
-                    </figcaption>
-                </figure>
-            </div>
-            <div class="flex justify-center items-center">
-                <figure
-                    class="p-5 pb-2 bg-gradient-to-t from-start-paper via-mid-paper via-10% to-end-paper to-80% shadow-lg rotate-2"
-                >
-                    <img
-                        class="clarendon size-[315px] aspect-square bg-checkers"
-                        src="vista-wei-OiERUvVrioU-unsplash.jpg"
-                        loading="lazy"
-                    />
-                    <figcaption
-                        class="block font-rock-salt text-xl text-slate-700 tracking-widest text-center p-2"
-                    >
-                        Tokyo. Clarendon.
-                    </figcaption>
-                </figure>
-            </div>
-            <div class="flex justify-center items-end pb-8">
-                <figure
-                    class="p-5 pb-2 bg-gradient-to-t from-start-paper from-20% via-mid-paper via-60% to-end-paper shadow-lg -rotate-1"
-                >
-                    <img
-                        class="lofi size-[315px] aspect-square bg-checkers"
-                        src="matthew-henry-Ix1TiS-E17E-unsplash.jpg"
-                        loading="lazy"
-                    />
-                    <figcaption
-                        class="block font-rock-salt text-xl text-slate-700 tracking-widest text-center p-2"
-                    >
-                        Urban. LoFi.
-                    </figcaption>
-                </figure>
-            </div>
-        </section>
+    <body>
+        <main class="page">
+            <section class="card" aria-labelledby="site-title">
+                <svg class="corner corner--left" viewBox="0 0 130 130" aria-hidden="true">
+                    <path d="M8 122C11 64 29 25 83 8M17 93c24 2 43-6 56-27M31 66c-2-18 3-32 18-42M48 105c19-6 32-17 38-35" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M18 92c-1-17 8-27 25-29-1 17-9 27-25 29ZM48 105c4-17 15-25 32-22-4 16-14 24-32 22ZM48 25c13 4 19 14 17 28-13-5-19-14-17-28ZM72 65c3-13 12-20 26-19-3 14-12 20-26 19Z" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                    <circle cx="84" cy="9" r="4" fill="currentColor"/>
+                </svg>
+
+                <div class="content">
+                    <p class="eyebrow">A new sound</p>
+
+                    <svg class="emblem" viewBox="0 0 160 160" aria-hidden="true">
+                        <circle cx="80" cy="80" r="56" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                        <circle cx="80" cy="80" r="45" fill="none" stroke="currentColor" stroke-width="1" stroke-dasharray="2 5"/>
+                        <g fill="currentColor">
+                            <path d="m80 6 5 52-5 12-5-12Z"/>
+                            <path d="m80 154-5-52 5-12 5 12Z"/>
+                            <path d="m6 80 52-5 12 5-12 5Z"/>
+                            <path d="m154 80-52 5-12-5 12-5Z"/>
+                            <path d="m28 28 39 32 5 12-12-5Z" opacity=".75"/>
+                            <path d="m132 132-39-32-5-12 12 5Z" opacity=".75"/>
+                            <path d="m132 28-32 39-12 5 5-12Z" opacity=".75"/>
+                            <path d="m28 132 32-39 12-5-5 12Z" opacity=".75"/>
+                        </g>
+                        <circle cx="80" cy="80" r="13" fill="var(--rust)"/>
+                        <circle cx="80" cy="80" r="5" fill="var(--paper)"/>
+                    </svg>
+
+                    <h1 id="site-title">StarCrust</h1>
+                    <div class="coming">Coming Soon</div>
+                    <svg class="flourish" viewBox="0 0 300 48" aria-hidden="true">
+                        <path d="M8 26c43 0 55-20 89-20 25 0 25 32 53 32s28-32 53-32c34 0 46 20 89 20" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                        <path d="M103 12c9 0 16 6 17 15-10 1-17-5-17-15Zm94 0c-9 0-16 6-17 15 10 1 17-5 17-15Z" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                        <circle cx="150" cy="38" r="3" fill="currentColor"/>
+                    </svg>
+                </div>
+
+                <svg class="corner corner--right" viewBox="0 0 130 130" aria-hidden="true">
+                    <path d="M8 122C11 64 29 25 83 8M17 93c24 2 43-6 56-27M31 66c-2-18 3-32 18-42M48 105c19-6 32-17 38-35" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M18 92c-1-17 8-27 25-29-1 17-9 27-25 29ZM48 105c4-17 15-25 32-22-4 16-14 24-32 22ZM48 25c13 4 19 14 17 28-13-5-19-14-17-28ZM72 65c3-13 12-20 26-19-3 14-12 20-26 19Z" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                    <circle cx="84" cy="9" r="4" fill="currentColor"/>
+                </svg>
+            </section>
+        </main>
     </body>
 </html>
